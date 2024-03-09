@@ -4,7 +4,7 @@ from tabulate import tabulate
 
  
 # Database password
-mysql_password = 'Jui#1510'
+mysql_password = 'Jui#1510' 
 
 # Connect to MySQL
 db_connection = mysql.connect(host='localhost', user='root', passwd=mysql_password, auth_plugin='mysql_native_password')
