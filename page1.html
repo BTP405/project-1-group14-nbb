@@ -80,6 +80,37 @@
         function confirmRemoveStudent() {
             return confirm("Are you sure you want to remove this student?");
         }
+        function addTeacher() {
+            var tcode = document.getElementById("tcode").value;
+            var name = document.getElementById("name").value;
+            var salary = document.getElementById("salary").value;
+            var address = document.getElementById("address").value;
+            var phone = document.getElementById("phone").value;
+        }
+
+        function removeTeacher() {
+            var tcode = document.getElementById("tcode").value;
+            var name = document.getElementById("name").value;
+        }
+
+        function updateSalary() {
+            var name = document.getElementById("name").value;
+            var tcode = document.getElementById("tcode").value;
+            var salary = document.getElementById("salary").value;
+        }
+
+        function addSubject() {
+            var bid = document.getElementById("subject_id").value;
+            var title = document.getElementById("title").value;
+            var cost = document.getElementById("cost").value;
+            var timings = document.getElementById("timings").value;
+            var duration = document.getElementById("duration").value;
+        }
+
+        function removeSubject() {
+            var title = document.getElementById("title").value;
+        }
+
     </script>
 </head>
 <body>
