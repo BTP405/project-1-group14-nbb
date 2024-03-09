@@ -10,6 +10,7 @@
     - Installation Instructions: Ensure Python and MySQL are installed, install dependencies using pip:
                                 ``` pip install mysql-connector-python tabulate```
 
+
 ## 3. Usage
     - Examples: No exampled
     - Configuration: No configuration required. Users must have MySQL installed and running.
