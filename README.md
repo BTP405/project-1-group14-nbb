@@ -3,8 +3,8 @@
 ### Please use the following template to add a ReadMe for your repo.
 
 ## 1. Project Title and Description
-    - Title: Provide a clear and concise title for your project.
-    - Description: Give a brief overview of what your project does and its purpose.
+    - Title: Teacher Management Module
+    - Description: This is the module which is created for the school teachers who can mark students attendece, to remove the student, to select                      the subjects for the students to many more. 
 ## 2. Installation
     - Dependencies: List any dependencies or prerequisites required to use your project.
     - Installation Instructions: Provide step-by-step instructions on how to install and set up your project.
