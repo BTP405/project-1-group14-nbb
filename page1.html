@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coaching Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .menu {
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        ul li a {
+            display: block;
+            padding: 10px;
+            background-color: #f0f0f0;
+            text-decoration: none;
+            color: #333;
+            border-radius: 4px;
+        }
+        ul li a:hover {
+            background-color: #e0e0e0;
+        }
+        .form-section {
+            margin-bottom: 20px;
+        }
+        form {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        form input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        form input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        // Function to confirm student removal
+        function confirmRemoveStudent() {
+            return confirm("Are you sure you want to remove this student?");
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Coaching Management System</h1>
+        <div class="menu">
+            <h2>Menu:</h2>
+            <ul>
+                <li><a href="#add_student">Add Student</a></li>
+                <li><a href="#remove_student" onclick="return confirmRemoveStudent()">Remove Student</a></li>
+            </ul>
+        </div>
+
+        <!-- Form for adding student -->
+        <div id="add_student" class="form-section">
+            <h2>Add Student</h2>
+            <form action="/add_student" method="post">
+                <label for="student_name">Student Name:</label>
+                <input type="text" id="student_name" name="name"><br>
+                <label for="student_class">Class:</label>
+                <input type="text" id="student_class" name="class"><br>
+                <label for="student_roll">Roll Number:</label>
+                <input type="text" id="student_roll" name="roll"><br>
+                <label for="student_address">Address:</label>
+                <input type="text" id="student_address" name="address"><br>
+                <label for="student_phone">Phone:</label>
+                <input type="text" id="student_phone" name="phone"><br>
+                <input type="submit" value="Add Student">
+            </form>
+        </div>
+
+        <!-- Form for removing student -->
+        <div id="remove_student" class="form-section">
+            <h2>Remove Student</h2>
+            <form action="/remove_student" method="post">
+                <label for="class_to_remove">Class:</label>
+                <input type="text" id="class_to_remove" name="class"><br>
+                <label for="roll_to_remove">Roll Number:</label>
+                <input type="text" id="roll_to_remove" name="roll"><br>
+                <input type="submit" value="Remove Student">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
