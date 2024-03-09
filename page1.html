@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teacher Management Module</title>
+    <title>Teacher Management System</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,7 +11,6 @@
             padding: 0;
             background-color: #f4f4f4;
         }
-        
         .container {
             max-width: 800px;
             margin: 20px auto;
@@ -76,51 +75,33 @@
             background-color: #45a049;
         }
     </style>
+     <script type="text/javascript"
+     src="https://cdn.jsdelivr.net/npm/brython@3.12.2/brython.min.js">
+    </script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/brython@3.12.2/brython_stdlib.js">
+    </script>
     <script>
         // Function to confirm student removal
         function confirmRemoveStudent() {
             return confirm("Are you sure you want to remove this student?");
-        }
-        function addTeacher() { 
-            var tcode = document.getElementById("tcode").value;
-            var name = document.getElementById("name").value;
-            var salary = document.getElementById("salary").value;
-            var address = document.getElementById("address").value;
-            var phone = document.getElementById("phone").value;
+        } 
+        function confirmAddStudent(){
+            return confirm("Are you sure you want to add this student?");
         }
 
-        function removeTeacher() {
-            var tcode = document.getElementById("tcode").value;
-            var name = document.getElementById("name").value;
-        }
+  </script>
 
-        function updateSalary() {
-            var name = document.getElementById("name").value;
-            var tcode = document.getElementById("tcode").value;
-            var salary = document.getElementById("salary").value;
-        }
-
-        function addSubject() {
-            var bid = document.getElementById("subject_id").value;
-            var title = document.getElementById("title").value;
-            var cost = document.getElementById("cost").value;
-            var timings = document.getElementById("timings").value;
-            var duration = document.getElementById("duration").value;
-        }
-
-        function removeSubject() {
-            var title = document.getElementById("title").value;
-        }
-
+        
     </script>
 </head>
 <body>
     <div class="container">
-        <h1>Teacher Management Module</h1>
+        <h1>Teacher Management System</h1>
         <div class="menu">
             <h2>Menu:</h2>
             <ul>
-                <li><a href="#add_student">Add Student</a></li>
+                <li><a href="#add_student" onclick="return runPythonScript()">Add Student</a></li>
                 <li><a href="#remove_student" onclick="return confirmRemoveStudent()">Remove Student</a></li>
             </ul>
         </div>
@@ -139,7 +120,7 @@
                 <input type="text" id="student_address" name="address"><br>
                 <label for="student_phone">Phone:</label>
                 <input type="text" id="student_phone" name="phone"><br>
-                <input type="submit" value="Add Student">
+                <input type="submit" value="Add Student" >
             </form>
         </div>
 
@@ -153,100 +134,10 @@
                 <input type="text" id="roll_to_remove" name="roll"><br>
                 <input type="submit" value="Remove Student">
             </form>
-            
-            <h2>Display Student Data</h2>
-            <form action="/display_student" method="POST">
-            <label for="class">Class:</label>
-            <input type="text" id="class" name="class" required><br><br>
-            <button type="submit">Display</button>
-        </form>
-            <h2>Add Teacher</h2>
-    <form action="/add_teacher" method="POST">
-        <label for="tcode">Teacher Code:</label>
-        <input type="number" id="tcode" name="tcode" required><br><br>
-        <label for="name">Teacher Name:</label>
-        <input type="text" id="name" name="name" required><br><br>
-        <label for="salary">Salary:</label>
-        <input type="number" id="salary" name="salary" required><br><br>
-        <label for="address">Address:</label>
-        <input type="text" id="address" name="address" required><br><br>
-        <label for="phone">Phone:</label>
-        <input type="text" id="phone" name="phone" required><br><br>
-        <button type="submit">Add Teacher</button>
-    </form>
-
-    <h2>Remove Teacher</h2>
-    <form action="/remove_teacher" method="POST">
-        <label for="tcode">Teacher Code:</label>
-        <input type="number" id="tcode" name="tcode" required><br><br>
-        <label for="name">Teacher Name:</label>
-        <input type="text" id="name" name="name" required><br><br>
-        <button type="submit">Remove Teacher</button>
-    </form>
-
-    <h2>Update Salary</h2>
-    <form action="/update_salary" method="POST">
-        <label for="name">Teacher Name:</label>
-        <input type="text" id="name" name="name" required><br><br>
-        <label for="tcode">Teacher Code:</label>
-        <input type="number" id="tcode" name="tcode" required><br><br>
-        <label for="salary">New Salary:</label>
-        <input type="number" id="salary" name="salary" required><br><br>
-        <button type="submit">Update Salary</button>
-    </form>
-
-    <h2>Display Teacher Data</h2>
-    <form action="/display_teacher" method="POST">
-        <button type="submit">Display Teachers</button>
-    </form>
-
-    <h2>Class Attendance</h2>
-    <form action="/class_attendance" method="POST">
-        <label for="class">Class:</label>
-        <input type="text" id="class" name="class" required><br><br>
-        <label for="class_teacher">Class Teacher:</label>
-        <input type="text" id="class_teacher" name="class_teacher" required><br><br>
-        <label for="class_strength">Class Strength:</label>
-        <input type="number" id="class_strength" name="class_strength" required><br><br>
-        <label for="date">Date:</label>
-        <input type="text" id="date" name="date" required><br><br>
-        <label for="absentees">Number of Absentees:</label>
-        <input type="number" id="absentees" name="absentees" required><br><br>
-        <button type="submit">Submit Attendance</button>
-    </form>
-
-    <h2>Display Class Attendance</h2>
-    <form action="/display_class_attendance" method="POST">
-        <button type="submit">Display Class Attendance</button>
-    </form>
-
-    <h2>Add Subject</h2>
-    <form action="/add_subject" method="POST">
-        <label for="subject_id">Subject ID:</label>
-        <input type="number" id="subject_id" name="subject_id" required><br><br>
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title" required><br><br>
-        <label for="cost">Cost:</label>
-        <input type="text" id="cost" name="cost" required><br><br>
-        <label for="timings">Timings:</label>
-        <input type="text" id="timings" name="timings" required><br><br>
-        <label for="duration">Duration:</label>
-        <input type="text" id="duration" name="duration" required><br><br>
-        <button type="submit">Add Subject</button>
-    </form>
-
-    <h2>Remove Subject</h2>
-    <form action="/remove_subject" method="POST">
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title" required><br><br>
-        <button type="submit">Remove Subject</button>
-    </form>
-
-    <h2>Display Subject Data</h2>
-    <form action="/display_subject" method="POST">
-        <button type="submit">Display Subjects</button>
-    </form>
         </div>
     </div>
+
+    <script type="text/python" src="Functions.py">
+    </script>
 </body>
 </html>
