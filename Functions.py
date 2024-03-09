@@ -2,7 +2,7 @@
 import mysql.connector as mysql
 from tabulate import tabulate
 
-
+ 
 # Database password
 mysql_password = 'Jui#1510'
 
