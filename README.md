@@ -6,27 +6,31 @@
     - Title: Teacher Management Module
     - Description: This is the module which is created for the school teachers who can mark students attendece, to remove the student, to select                      the subjects for the students to many more. 
 ## 2. Installation
-    - Dependencies: List any dependencies or prerequisites required to use your project.
-    - Installation Instructions: Provide step-by-step instructions on how to install and set up your project.
-## 3. Usage
-    - Examples: Include examples or code snippets to demonstrate how to use your project.
-    - Configuration: Explain any configuration options or settings users might need to know about.
-## 4. Features
-    - List of Features: Outline the main features and functionalities of your project.
-## 5. Contributing
-    - Guidelines: Explain how others can contribute to your project, including information on submitting bug reports, feature requests, or code contributions.
-    - Code Style: If applicable, provide guidelines or references to your code style.
-## 6. Credits
-    - Authors: List the authors or contributors of the project.
-    - Acknowledgments: Mention any individuals or resources that helped inspire or support your project.
-## 7. License
-    - License Information: Specify the license under which your project is distributed.
-## 8. Additional Sections (Optional)
-    - FAQ: Include frequently asked questions and their answers.
-    - Troubleshooting: Provide solutions to common issues or troubleshooting tips.
-    - Roadmap: Outline the future development plans for your project.
-    - Changelog: Document changes and updates to your project over time.
+    - Dependencies: MySQL Connector, Tabulate library
+    - Installation Instructions: Ensure Python and MySQL are installed, install dependencies using pip:
+                                ``` pip install mysql-connector-python tabulate```
 
+## 3. Usage
+    - Examples: No exampled
+    - Configuration: No configuration required. Users must have MySQL installed and running.
+## 4. Features
+    - List of Features: Add, remove, and display student data.
+    - Add, remove, update salary, and display teacher data.
+    - Record and display class attendance.
+    - Add, remove, and display subject data.
+## 5. Contributing
+    - Guidelines: Follow PEP 8 guidelines.
+    - Code Style: There is not specific code style we have developed but if you notice something please let us know.
+## 6. Credits
+    - Authors: No
+    - Acknowledgments: No
+## 7. License
+    - License Information: No
+## 8. Additional Sections (Optional)
+    - FAQ: No
+    - Troubleshooting: No
+    - Roadmap: No
+    - Changelog: No
 ## Markdown Formatting Tips
   - Use headings (#, ##, ###, etc.) to structure your document.
   - Utilize lists (- or 1.) for easy-to-read information.
