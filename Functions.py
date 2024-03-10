@@ -1,5 +1,5 @@
 # Import required libraries
-import mysql.connector as mysql
+import mysql.connector as mysql 
 from tabulate import tabulate
 
  
