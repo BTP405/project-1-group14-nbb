@@ -74,6 +74,11 @@
         form input[type="submit"]:hover {
             background-color: #45a049;
         }
+        @media screen and (max-width: 600px) {
+            .container {
+                width: 95%;
+            }
+        }
     </style>
      <script type="text/javascript"
      src="https://cdn.jsdelivr.net/npm/brython@3.12.2/brython.min.js">
@@ -103,6 +108,16 @@
             <ul>
                 <li><a href="#add_student" onclick="return runPythonScript()">Add Student</a></li>
                 <li><a href="#remove_student" onclick="return confirmRemoveStudent()">Remove Student</a></li>
+                <li><a href="#add_teacher" onclick="()"></a></li>
+                <li><a href="#remove_teacher" onclick="()"></a></li>
+                <li><a href="#add_subject" onclick="()"></a></li>
+                <li><a href="#remove_subject" onclick="()"></a></li>
+                <li><a href="#display_teacher" onclick="()"></a></li>
+                <li><a href="#display_subject" onclick="()"></a></li>
+                <li><a href="#class_attendence" onclick="()"></a></li>
+                <li><a href="#display_class_attendence" onclick="()"></a></li>
+                <li><a href="#update_salary" onclick="()"></a></li>
+                <li><a href="#display_student" onclick="()"></a></li>
             </ul>
         </div>
 
@@ -136,6 +151,72 @@
             </form>
         </div>
     </div>
+
+    <!--Form for Display student-->
+    <!--Form for Add teacher-->
+       <div id="add_teacher" class="form-section">
+    <h2>Add Teacher</h2>
+    <form action="/add_teacher" method="post">
+        <label for="teacher_name">Teacher Name:</label>
+        <input type="text" id="teacher_name" name="name"><br>
+        <label for="teacher_tcode">Teacher Code:</label>
+        <input type="text" id="teacher_tcode" name="tcode"><br>
+        <label for="teacher_salary">Salary:</label>
+        <input type="text" id="teacher_salary" name="salary"><br>
+        <label for="teacher_address">Address:</label>
+        <input type="text" id="teacher_address" name="address"><br>
+        <label for="teacher_phone">Phone:</label>
+        <input type="text" id="teacher_phone" name="phone"><br>
+        <input type="submit" value="Add Teacher">
+    </form>
+</div>
+    <!--Form for remove teacher-->
+<div id="remove_teacher" class="form-section">
+    <h2>Remove Teacher</h2>
+    <form action="/remove_teacher" method="post">
+        <label for="teacher_tcode_remove">Teacher Code:</label>
+        <input type="text" id="teacher_tcode_remove" name="tcode"><br>
+        <label for="teacher_name_remove">Teacher Name:</label>
+        <input type="text" id="teacher_name_remove" name="name"><br>
+        <input type="submit" value="Remove Teacher">
+    </form>
+</div>
+    <!--FOrm for display Teacher-->
+    <!--Form for update salary-->
+
+    <!--Form for add subject-->
+    <div id="add_subject" class="form-section">
+    <h2>Add Subject</h2>
+    <form action="/add_subject" method="post">
+        <label for="subject_id">Subject ID:</label>
+        <input type="text" id="subject_id" name="subID"><br>
+        <label for="subject_title">Title:</label>
+        <input type="text" id="subject_title" name="title"><br>
+        <label for="subject_cost">Cost:</label>
+        <input type="text" id="subject_cost" name="cost"><br>
+        <label for="subject_timings">Timings:</label>
+        <input type="text" id="subject_timings" name="timings"><br>
+        <label for="subject_duration">Duration:</label>
+        <input type="text" id="subject_duration" name="duration"><br>
+        <input type="submit" value="Add Subject">
+    </form>
+</div>
+    <!-- Form for removing subject -->
+<div id="remove_subject" class="form-section">
+    <h2>Remove Subject</h2>
+    <form action="/remove_subject" method="post">
+        <label for="subject_title_remove">Title:</label>
+        <input type="text" id="subject_title_remove" name="title"><br>
+        <input type="submit" value="Remove Subject">
+    </form>
+</div>
+
+<!-- Display subject details -->
+<div id="display_teacher" class="form-section">
+    <h2>Display Teacher Details</h2>
+    <!-- Here, you can use JavaScript to fetch and display subject details -->
+</div>
+
 
     <script type="text/python" src="Functions.py">
     </script>
