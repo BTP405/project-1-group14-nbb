@@ -88,7 +88,8 @@ document.getElementById('main-form').addEventListener('click', async (event) => 
 document.querySelectorAll('input[name="option"]').forEach((input) => {
     input.addEventListener('change', () => {
         const fieldsets = document.querySelectorAll('fieldset');
-        fieldsets.forEach((fieldset) => {fieldset.style.display = 'none';
+        fieldsets.forEach((fieldset) => {
+            fieldset.style.display = 'none';
         });
         const selectedFieldset = document.getElementById(input.value + '-fieldset');
         selectedFieldset.style.display = 'block';
