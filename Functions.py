@@ -1,12 +1,11 @@
 # Import required libraries
-import mysql.connector as mysql 
+import mysql.connector as mysql
 from tabulate import tabulate
 
- 
 # Database password
-mysql_password = 'Jui#1510' 
+mysql_password = 'Jui#1510'
 
-# Connect to MySQL
+# Connect to MySQL database
 db_connection = mysql.connect(host='localhost', user='root', passwd=mysql_password, auth_plugin='mysql_native_password')
 db_cursor = db_connection.cursor()
 
@@ -73,9 +72,9 @@ def display_student():
 
 # Add Teacher
 def add_teacher():
-    tcode = int(input("TCode: "))
+    tcode = input("TCode: ")
     n = input("Teacher name: ")
-    s = int(input("Salary: "))
+    s = input("Salary: ")
     a = input("Address: ")
     ph = input("Phone: ")
     data = (n, tcode, s, a, ph)
@@ -89,29 +88,25 @@ def add_teacher():
 
 # Remove Teacher
 def remove_teacher():
-    tcode = int(input("Tcode: "))
-    name = input("Teacher: ")
-    data = (tcode, name)
-    sql = 'DELETE FROM teacher WHERE tcode=%s AND name=%s'
+    tcode = input("Teacher Code: ")
+    data = (tcode,)
+    sql = 'DELETE FROM teacher WHERE tcode=%s'
     db_cursor.execute(sql, data)
     db_connection.commit()
-    print("Data Removed")
+    print("Teacher Removed")
     print("")
-    main()
 
 
 # Update Salary
 def update_salary():
-    n = input("Teacher: ")
-    tcode = int(input("Tcode: "))
-    salary = int(input("Salary: "))
-    data = (salary, n, tcode)
-    sql = 'UPDATE teacher SET salary=%s WHERE name=%s AND tcode=%s'
+    tcode = input("Teacher Code: ")
+    new_salary = input("New Salary: ")
+    data = (new_salary, tcode)
+    sql = 'UPDATE teacher SET salary=%s WHERE tcode=%s'
     db_cursor.execute(sql, data)
     db_connection.commit()
-    print("Data Updated")
+    print("Salary Updated")
     print("")
-    main()
 
 
 # Display Teacher Data
@@ -123,7 +118,6 @@ def display_teacher():
     header = ["Name", "Teacher Code", "Salary", "Address", "Phone Number"]
     print(tabulate(teacher_data, headers=header))
     print("")
-    main()
 
 
 # Class Attendance
@@ -139,7 +133,6 @@ def class_attendance():
     db_connection.commit()
     print("Data entered successfully")
     print("")
-    main()
 
 
 # Display Class Attendance
@@ -151,7 +144,6 @@ def display_class_attendance():
     header = ["Class", "Class Teacher", "Total Students", "Date", "Absentees"]
     print(tabulate(attendance_data, headers=header))
     print("")
-    main()
 
 
 # Add Subject
@@ -167,7 +159,6 @@ def add_subject():
     db_connection.commit()
     print("Data entered successfully")
     print("")
-    main()
 
 
 # Remove Subject
@@ -179,7 +170,6 @@ def remove_subject():
     db_connection.commit()
     print("Data Removed")
     print("")
-    main()
 
 
 # Display Subject Data
@@ -191,7 +181,6 @@ def display_subject():
     header = ["Subject ID", "Title", "Cost", "Timing", "Duration"]
     print(tabulate(subject_data, headers=header))
     print("")
-    main()
 
 
 # Main function
@@ -221,7 +210,6 @@ def main():
                 else:
                     print("Enter Valid Choice!!")
                 op = input("Continue in this table (y/n): ")
-
         elif table == 2:
             op = 'y'
             while op.lower() == 'y':
@@ -241,7 +229,6 @@ def main():
                 else:
                     print("Enter Valid Choice!!")
                 op = input("Continue in this table (y/n): ")
-
         elif table == 3:
             op = 'y'
             while op.lower() == 'y':
@@ -255,7 +242,6 @@ def main():
                 else:
                     print("Enter Valid Choice!!")
                 op = input("Continue in this table (y/n): ")
-
         elif table == 4:
             op = 'y'
             while op.lower() == 'y':
@@ -275,7 +261,6 @@ def main():
         else:
             print("ENTER VALID CHOICE!!")
         ch = input("Do you want to continue (y/n): ")
-
     db_cursor.close()
     db_connection.close()
 
@@ -283,3 +268,5 @@ def main():
 if __name__ == "__main__":
     create_database_and_tables()
     main()
+
+
