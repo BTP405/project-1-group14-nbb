@@ -3,222 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teacher Management System</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-        }
-        .menu {
-            margin-bottom: 20px;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        ul li {
-            margin-bottom: 10px;
-        }
-        ul li a {
-            display: block;
-            padding: 10px;
-            background-color: #f0f0f0;
-            text-decoration: none;
-            color: #333;
-            border-radius: 4px;
-        }
-        ul li a:hover {
-            background-color: #e0e0e0;
-        }
-        .form-section {
-            margin-bottom: 20px;
-        }
-        form {
-            border: 1px solid #ccc;
-            padding: 20px;
-            border-radius: 8px;
-        }
-        form label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        form input[type="text"] {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        form input[type="submit"] {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        form input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-        @media screen and (max-width: 600px) {
-            .container {
-                width: 95%;
-            }
-        }
-    </style>
-     <script type="text/javascript"
-     src="https://cdn.jsdelivr.net/npm/brython@3.12.2/brython.min.js">
-    </script>
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/brython@3.12.2/brython_stdlib.js">
-    </script>
-    <script>
-        // Function to confirm student removal
-        function confirmRemoveStudent() {
-            return confirm("Are you sure you want to remove this student?");
-        } 
-        function confirmAddStudent(){
-            return confirm("Are you sure you want to add this student?");
-        }
-
-  </script>
-
-        
-    </script>
+    <title>Coaching Management System</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Teacher Management System</h1>
-        <div class="menu">
-            <h2>Menu:</h2>
-            <ul>
-                <li><a href="#add_student" onclick="return runPythonScript()">Add Student</a></li>
-                <li><a href="#remove_student" onclick="return confirmRemoveStudent()">Remove Student</a></li>
-                <li><a href="#add_teacher" onclick="()"></a></li>
-                <li><a href="#remove_teacher" onclick="()"></a></li>
-                <li><a href="#add_subject" onclick="()"></a></li>
-                <li><a href="#remove_subject" onclick="()"></a></li>
-                <li><a href="#display_teacher" onclick="()"></a></li>
-                <li><a href="#display_subject" onclick="()"></a></li>
-                <li><a href="#class_attendence" onclick="()"></a></li>
-                <li><a href="#display_class_attendence" onclick="()"></a></li>
-                <li><a href="#update_salary" onclick="()"></a></li>
-                <li><a href="#display_student" onclick="()"></a></li>
-            </ul>
-        </div>
-
-        <!-- Form for adding student -->
-        <div id="add_student" class="form-section">
-            <h2>Add Student</h2>
-            <form action="/add_student" method="post">
-                <label for="student_name">Student Name:</label>
-                <input type="text" id="student_name" name="name"><br>
-                <label for="student_class">Class:</label>
-                <input type="text" id="student_class" name="class"><br>
-                <label for="student_roll">Roll Number:</label>
-                <input type="text" id="student_roll" name="roll"><br>
-                <label for="student_address">Address:</label>
-                <input type="text" id="student_address" name="address"><br>
-                <label for="student_phone">Phone:</label>
-                <input type="text" id="student_phone" name="phone"><br>
-                <input type="submit" value="Add Student" >
-            </form>
-        </div>
-
-        <!-- Form for removing student -->
-        <div id="remove_student" class="form-section">
-            <h2>Remove Student</h2>
-            <form action="/remove_student" method="post">
-                <label for="class_to_remove">Class:</label>
-                <input type="text" id="class_to_remove" name="class"><br>
-                <label for="roll_to_remove">Roll Number:</label>
-                <input type="text" id="roll_to_remove" name="roll"><br>
-                <input type="submit" value="Remove Student">
-            </form>
-        </div>
-    </div>
-
-    <!--Form for Display student-->
-    <!--Form for Add teacher-->
-       <div id="add_teacher" class="form-section">
-    <h2>Add Teacher</h2>
-    <form action="/add_teacher" method="post">
-        <label for="teacher_name">Teacher Name:</label>
-        <input type="text" id="teacher_name" name="name"><br>
-        <label for="teacher_tcode">Teacher Code:</label>
-        <input type="text" id="teacher_tcode" name="tcode"><br>
-        <label for="teacher_salary">Salary:</label>
-        <input type="text" id="teacher_salary" name="salary"><br>
-        <label for="teacher_address">Address:</label>
-        <input type="text" id="teacher_address" name="address"><br>
-        <label for="teacher_phone">Phone:</label>
-        <input type="text" id="teacher_phone" name="phone"><br>
-        <input type="submit" value="Add Teacher">
+    <h1>Coaching Management System</h1>
+    <form id="main-form">
+        <fieldset>
+            <legend>Select an option:</legend>
+            <label><input type="radio" name="option" value="student" checked> Student</label>
+            <label><input type="radio" name="option" value="teacher"> Teacher</label>
+            <label><input type="radio" name="option" value="attendance"> Class Attendance</label>
+            <label><input type="radio" name="option" value="subject"> Subject</label>
+        </fieldset>
+        <fieldset id="student-fieldset" style="display: block;">
+            <legend>Student</legend>
+            <button type="button" id="add-student">Add Student</button>
+            <button type="button" id="remove-student">Remove Student</button>
+            <button type="button" id="display-student">Display Student Details</button>
+        </fieldset>
+        <fieldset id="teacher-fieldset" style="display: none;">
+            <legend>Teacher</legend>
+            <button type="button" id="add-teacher">Add Teacher</button>
+            <button type="button" id="remove-teacher">Remove Teacher</button>
+            <button type="button" id="update-salary">Update Salary</button>
+            <button type="button" id="display-teacher">Display Teacher Details</button>
+        </fieldset>
+        < <fieldset id="attendance-fieldset" style="display: none;">
+            <legend>Class Attendance</legend>
+            <button type="button" id="class-attendance">Class Attendance</button>
+            <button type="button" id="display-attendance">Display Class Attendance Details</button>
+        </fieldset>
+        <fieldset id="subject-fieldset" style="display: none;">
+            <legend>Subject</legend>
+            <button type="button" id="add-subject">Add Subject</button>
+            <button type="button" id="remove-subject">Remove Subject</button>
+            <button type="button" id="display-subject">Display Subject Details</button>
+        </fieldset>
     </form>
-</div>
-    <!--Form for remove teacher-->
-<div id="remove_teacher" class="form-section">
-    <h2>Remove Teacher</h2>
-    <form action="/remove_teacher" method="post">
-        <label for="teacher_tcode_remove">Teacher Code:</label>
-        <input type="text" id="teacher_tcode_remove" name="tcode"><br>
-        <label for="teacher_name_remove">Teacher Name:</label>
-        <input type="text" id="teacher_name_remove" name="name"><br>
-        <input type="submit" value="Remove Teacher">
-    </form>
-</div>
-    <!--FOrm for display Teacher-->
-    <!--Form for update salary-->
-
-    <!--Form for add subject-->
-    <div id="add_subject" class="form-section">
-    <h2>Add Subject</h2>
-    <form action="/add_subject" method="post">
-        <label for="subject_id">Subject ID:</label>
-        <input type="text" id="subject_id" name="subID"><br>
-        <label for="subject_title">Title:</label>
-        <input type="text" id="subject_title" name="title"><br>
-        <label for="subject_cost">Cost:</label>
-        <input type="text" id="subject_cost" name="cost"><br>
-        <label for="subject_timings">Timings:</label>
-        <input type="text" id="subject_timings" name="timings"><br>
-        <label for="subject_duration">Duration:</label>
-        <input type="text" id="subject_duration" name="duration"><br>
-        <input type="submit" value="Add Subject">
-    </form>
-</div>
-    <!-- Form for removing subject -->
-<div id="remove_subject" class="form-section">
-    <h2>Remove Subject</h2>
-    <form action="/remove_subject" method="post">
-        <label for="subject_title_remove">Title:</label>
-        <input type="text" id="subject_title_remove" name="title"><br>
-        <input type="submit" value="Remove Subject">
-    </form>
-</div>
-
-<!-- Display subject details -->
-<div id="display_teacher" class="form-section">
-    <h2>Display Teacher Details</h2>
-    <!-- Here, you can use JavaScript to fetch and display subject details -->
-</div>
-
-
-    <script type="text/python" src="Functions.py">
-    </script>
+    <div id="result"></div>
+    <script src="script.js"></script>
 </body>
 </html>
