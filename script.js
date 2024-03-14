@@ -75,7 +75,7 @@ document.getElementById('main-form').addEventListener('click', async (event) => 
                 return;
         }
 
-        const response = await fetch('backend.py', {
+        const response = await fetch('Functions.py', {
             method: 'POST',
             body: formData
         });
