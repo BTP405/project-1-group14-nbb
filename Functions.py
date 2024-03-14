@@ -13,8 +13,8 @@ db_cursor = db_connection.cursor()
 
 # Create the database and tables if they don't exist
 def create_database_and_tables():
-    db_cursor.execute("CREATE DATABASE IF NOT EXISTS coaching")
-    db_cursor.execute("USE coaching")
+    db_cursor.execute("CREATE DATABASE IF NOT EXISTS teaching")
+    db_cursor.execute("USE teaching")
 
     # Creating Tables
     tables = [
@@ -198,7 +198,7 @@ def display_subject():
 def main():
     ch = 'y'
     while ch.lower() == 'y':
-        print("Coaching Management System")
+        print("Teaching Management System")
         print("1. Student")
         print("2. Teacher")
         print("3. Class Attendance")
